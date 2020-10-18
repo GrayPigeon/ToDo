@@ -1,11 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 
 export default function Items({ itemName }) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>{itemName}</Text>
+        <View>
+            <View style={styles.container}>
+                <Text style={styles.text}>{itemName}</Text>
+            </View>
+            <View>
+                <TouchableOpacity>
+                    <Text>Here</Text>
+                </TouchableOpacity>
+            </View>
         </View>
+
     )
 }
 

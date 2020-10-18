@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableHighlight, TouchableOpacity } from 'react-native';
 import Items from './components/Items';
 
 
@@ -31,7 +31,7 @@ export default function App() {
         <View style={styles.searchAndBtnContainer}>
           <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item' ></TextInput>
 
-          <TouchableOpacity style={styles.addBtn} onPress={handleSubmit}>
+          <TouchableOpacity style={styles.addBtn} onPress={handleSubmit} activeOpacity={.7}>
             <Text>Add</Text>
           </TouchableOpacity>
         </View>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     width: '80%',
-    marginLeft: '5%',
+    marginLeft: '10%',
     marginRight: '10%'
 
   },
