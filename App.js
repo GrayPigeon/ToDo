@@ -22,26 +22,25 @@ export default function App() {
     <View style={styles.container}>
 
       <View style={styles.box}>
+
         <View style={styles.titleContainer}>
           <Text style={styles.title}>ToDo</Text>
-
         </View>
 
 
         <View style={styles.searchAndBtnContainer}>
+
           <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item' ></TextInput>
 
           <TouchableOpacity style={styles.addBtn} onPress={handleSubmit} activeOpacity={.7}>
             <Text>Add</Text>
           </TouchableOpacity>
+
         </View>
 
+
         {todos.map(cur => <Items itemName={cur} />)}
-
-
-
       </View>
-
     </View>
 
   );
@@ -69,8 +68,8 @@ const styles = StyleSheet.create({
   },
 
   titleContainer: {
-    backgroundColor: '#619b8a'
-
+    backgroundColor: '#619b8a',
+    padding: 8,
   },
 
   searchBox: {
