@@ -95,6 +95,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: '2%',
     height: '8%',
-    width: '60%',
+    width: '90%',
   }
 });
