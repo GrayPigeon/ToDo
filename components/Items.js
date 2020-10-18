@@ -3,15 +3,8 @@ import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 're
 
 export default function Items({ itemName }) {
     return (
-        <View>
-            <View style={styles.container}>
-                <Text style={styles.text}>{itemName}</Text>
-            </View>
-            <View>
-                <TouchableOpacity>
-                    <Text>Here</Text>
-                </TouchableOpacity>
-            </View>
+        <View style={styles.container}>
+            <Text style={styles.text}>{itemName}</Text>
         </View>
 
     )
