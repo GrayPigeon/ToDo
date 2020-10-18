@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
   searchBox: {
     backgroundColor: 'white',
     padding: 10,
-    width: '80%',
+    flex: 3,
+    height: '100%',
     marginLeft: '10%',
     marginRight: '10%'
 
@@ -84,8 +85,8 @@ const styles = StyleSheet.create({
 
   addBtn: {
     backgroundColor: '#fb8500',
-    padding: '5%',
     width: '20%',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
   searchAndBtnContainer: {
     flexDirection: 'row',
     margin: '2%',
-    height: '7.5%',
-    width: '40%',
+    height: '8%',
+    width: '60%',
   }
 });
