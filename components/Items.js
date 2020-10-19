@@ -12,7 +12,7 @@ export default function Items({ itemName }) {
                 </View>
 
                 <View style={styles.deleteContainer}>
-                    <TouchableOpacity style={styles.deleteBtn} >
+                    <TouchableOpacity style={styles.deleteBtn} onPress={() => console.log('deleted')}>
                         <Text style={styles.deleteText}>Delete</Text>
                     </TouchableOpacity>
                 </View>
@@ -54,13 +54,13 @@ const styles = new StyleSheet.create({
     deleteContainer: {
         flex: 1,
         backgroundColor: 'red',
-        justifyContent: 'center',
-        alignItems: 'center',
-
     },
 
     deleteBtn: {
-
+        height: '100%',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     itemText: {
