@@ -40,6 +40,7 @@ export default function App() {
 
 
         {todos.map(cur => <Items itemName={cur} />)}
+
       </View>
     </View>
 
@@ -77,9 +78,8 @@ const styles = StyleSheet.create({
     padding: 10,
     flex: 3,
     height: '100%',
-    marginLeft: '10%',
-    marginRight: '10%'
-
+    marginRight: '10%',
+    borderRadius: 10,
   },
 
   addBtn: {
@@ -88,11 +88,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 10,
   },
 
   searchAndBtnContainer: {
     flexDirection: 'row',
     margin: '2%',
+    left: '4%',
     height: '8%',
     width: '90%',
   }

@@ -4,7 +4,21 @@ import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 're
 export default function Items({ itemName }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>{itemName}</Text>
+
+            <View style={styles.itemAndBtnContainer}>
+                <View style={styles.itemTextContainer}>
+                    <Text style={styles.itemText}>{itemName}</Text>
+
+                </View>
+
+                <View style={styles.deleteContainer}>
+                    <TouchableOpacity style={styles.deleteBtn} >
+                        <Text style={styles.deleteText}>Delete</Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
+
         </View>
 
     )
@@ -12,17 +26,48 @@ export default function Items({ itemName }) {
 
 const styles = new StyleSheet.create({
     container: {
-        backgroundColor: '#cad4d1',
-        height: '9%',
+        flexDirection: 'row',
+    },
+
+    itemAndBtnContainer: {
+        flexDirection: 'row',
+        height: '100%',
         width: '80%',
         left: '5%',
-        padding: '1%',
+        padding: '2%',
         margin: '1%',
         justifyContent: 'center',
         alignItems: 'left',
     },
 
-    text: {
+    itemTextContainer: {
+        flex: 4,
+        height: '100%',
+        backgroundColor: '#cad4d1',
+        justifyContent: 'center',
+        alignItems: 'left',
+        marginRight: '5%',
+        paddingLeft: '2%',
+
+    },
+
+    deleteContainer: {
+        flex: 1,
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+
+    deleteBtn: {
+
+    },
+
+    itemText: {
+        fontSize: 20,
+    },
+
+    deleteText: {
         fontSize: 20,
     }
 })
