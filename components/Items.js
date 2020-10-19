@@ -1,9 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native';
 
-export default function Items({ itemName }) {
+export default function Items({ itemName, idk }) {
+    const [deleted, setDeleted] = useState(false);
+
+    function handleDelete() {
+        console.log('DELETED');
+        deleted = true;
+
+    }
+
+    if (deleted) {
+        idk = 'deleted';
+    }
+
     return (
-        <View style={styles.container}>
+        < View style={styles.container} >
 
             <View style={styles.itemAndBtnContainer}>
                 <View style={styles.itemTextContainer}>
@@ -13,13 +25,13 @@ export default function Items({ itemName }) {
 
                 <View style={styles.deleteContainer}>
                     <TouchableOpacity style={styles.deleteBtn} onPress={() => console.log('deleted')}>
-                        <Text style={styles.deleteText}>Delete</Text>
+                        <Image style={styles.delImg} source={require('../assets/Trash.png')}></Image>
                     </TouchableOpacity>
                 </View>
 
             </View>
 
-        </View>
+        </View >
 
     )
 }
@@ -41,7 +53,7 @@ const styles = new StyleSheet.create({
     },
 
     itemTextContainer: {
-        flex: 4,
+        flex: 10,
         height: '100%',
         backgroundColor: '#cad4d1',
         justifyContent: 'center',
@@ -52,8 +64,7 @@ const styles = new StyleSheet.create({
     },
 
     deleteContainer: {
-        flex: 1,
-        backgroundColor: 'red',
+        flex: .5,
     },
 
     deleteBtn: {
@@ -69,5 +80,10 @@ const styles = new StyleSheet.create({
 
     deleteText: {
         fontSize: 20,
+    },
+
+    delImg: {
+        height: '100%',
+        width: '100%',
     }
 })
