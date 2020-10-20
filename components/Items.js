@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native';
 
-export default function Items({ itemName, idk }) {
-    const [deleted, setDeleted] = useState(false);
+export default function Items({ itemName, stateChanger, currentIndex }) {
 
     function handleDelete() {
         console.log('DELETED');
-        deleted = true;
-
-    }
-
-    if (deleted) {
-        idk = 'deleted';
+        stateChanger(currentIndex);
     }
 
     return (
-        < View style={styles.container} >
+        <View style={styles.container} >
 
             <View style={styles.itemAndBtnContainer}>
                 <View style={styles.itemTextContainer}>
@@ -24,12 +18,13 @@ export default function Items({ itemName, idk }) {
                 </View>
 
                 <View style={styles.deleteContainer}>
-                    <TouchableOpacity style={styles.deleteBtn} onPress={() => console.log('deleted')}>
+                    <TouchableOpacity style={styles.deleteBtn} onPress={handleDelete}>
                         <Image style={styles.delImg} source={require('../assets/Trash.png')}></Image>
                     </TouchableOpacity>
                 </View>
 
             </View>
+
 
         </View >
 

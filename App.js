@@ -7,6 +7,7 @@ import Items from './components/Items';
 export default function App() {
   const [newItem, setNewItem] = useState('');
   const [todos, setTodos] = useState([]);
+  const [change, setChange] = useState(-1);
 
   function handleSubmit() {
     setTodos(todos.concat(newItem));
@@ -15,6 +16,20 @@ export default function App() {
   function handleInputChange(e) {
     setNewItem(e.target.value);
   }
+
+  function changeState(val) {
+    setChange(val);
+  }
+
+
+
+  // function filt() {
+  // console.log(change);
+  () => setTodos(todos.filter((cur, i) => change != i));
+  console.log(todos);
+  // () => changeState(-1);
+  // }
+
 
   return (
     <View style={styles.container}>
@@ -28,7 +43,8 @@ export default function App() {
 
         <View style={styles.searchAndBtnContainer}>
 
-          <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput>
+          <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput>
+          {/* <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput> */}
 
           <TouchableOpacity style={styles.addBtn} onPress={handleSubmit} activeOpacity={.7}>
 
@@ -38,7 +54,15 @@ export default function App() {
         </View>
 
 
-        {todos.map(cur => <Items itemName={cur} />)}
+        {/* {todos.map((cur => <Items stateChanger={changeState} itemName={cur} />))} */}
+
+        {/* {todos.map((cur, i) => {
+          return change != i && <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
+        })} */}
+        {todos.map((cur, i) => {
+          return <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
+        })}
+
 
       </View>
     </View>
