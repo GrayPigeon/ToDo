@@ -18,14 +18,14 @@ export default function Items({ itemName, stateChanger, currentIndex }) {
                 </View>
 
                 <View style={styles.deleteContainer}>
-                    <TouchableOpacity style={styles.deleteBtn} onPress={handleDelete}>
+                    <TouchableOpacity style={styles.deleteBtn} onPress={handleDelete} activeOpacity={.7}>
                         <Image style={styles.delImg} source={require('../assets/Trash.png')}></Image>
                     </TouchableOpacity>
                 </View>
 
             </View>
 
-        </View >
+        </View>
     )
 }
 
@@ -38,7 +38,7 @@ const styles = new StyleSheet.create({
         flexDirection: 'row',
         height: '100%',
         width: '80%',
-        left: '5%',
+        left: '7.5%',
         padding: '1%',
         margin: '1%',
         justifyContent: 'center',

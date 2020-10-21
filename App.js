@@ -21,7 +21,6 @@ export default function App() {
     setChange(val);
   }
 
-
   return (
     <View style={styles.container}>
 
