@@ -25,9 +25,7 @@ export default function Items({ itemName, stateChanger, currentIndex }) {
 
             </View>
 
-
         </View >
-
     )
 }
 
@@ -41,7 +39,7 @@ const styles = new StyleSheet.create({
         height: '100%',
         width: '80%',
         left: '5%',
-        padding: '2%',
+        padding: '1%',
         margin: '1%',
         justifyContent: 'center',
         alignItems: 'left',

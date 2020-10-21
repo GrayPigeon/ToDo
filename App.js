@@ -10,7 +10,7 @@ export default function App() {
   const [change, setChange] = useState(-1);
 
   function handleSubmit() {
-    setTodos(todos.concat(newItem));
+    newItem !== '' && setTodos(todos.concat(newItem));
   }
 
   function handleInputChange(e) {
@@ -20,15 +20,6 @@ export default function App() {
   function changeState(val) {
     setChange(val);
   }
-
-
-
-  // function filt() {
-  // console.log(change);
-  () => setTodos(todos.filter((cur, i) => change != i));
-  console.log(todos);
-  // () => changeState(-1);
-  // }
 
 
   return (
@@ -53,16 +44,13 @@ export default function App() {
 
         </View>
 
-
-        {/* {todos.map((cur => <Items stateChanger={changeState} itemName={cur} />))} */}
-
-        {/* {todos.map((cur, i) => {
-          return change != i && <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
-        })} */}
         {todos.map((cur, i) => {
+          if (i == change) {
+            todos.splice(i, 1);
+            setChange(-1);
+          }
           return <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
         })}
-
 
       </View>
     </View>
