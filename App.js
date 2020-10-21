@@ -33,8 +33,8 @@ export default function App() {
 
         <View style={styles.searchAndBtnContainer}>
 
-          <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput>
-          {/* <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput> */}
+          {/* <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput> */}
+          <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput>
 
           <TouchableOpacity style={styles.addBtn} onPress={handleSubmit} activeOpacity={.7}>
 
