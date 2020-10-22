@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
 
   box: {
-    backgroundColor: '#8ecae6',
+    backgroundColor: 'pink',
     height: '100%',
     width: '100%',
   },
