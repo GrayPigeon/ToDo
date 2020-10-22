@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import DeleteBtn from '../components/DeleteBtn';
 
 export default function Items({ itemName, stateChanger, currentIndex }) {
