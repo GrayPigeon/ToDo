@@ -3,8 +3,13 @@ import { StyleSheet, View, TouchableOpacity, TextInput, Text, Platform } from 'r
 
 export default function AddItems({ todos, funcSetTodos }) {
     const [newItem, setNewItem] = useState('');
+    let textInput = '';
 
-    const handleSubmit = () => newItem !== '' && funcSetTodos(todos.concat(newItem));
+    const handleSubmit = () => {
+        newItem !== '' && funcSetTodos(todos.concat(newItem));
+        textInput.clear();
+    }
+
     const handleInputChange = (e) => setNewItem(e.target.value);
 
     return (
@@ -12,7 +17,7 @@ export default function AddItems({ todos, funcSetTodos }) {
 
             {Platform.OS == 'ios' || Platform.OS == 'android'
                 ? <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput>
-                : <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput>
+                : <TextInput ref={input => { textInput = input }} style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput>
             }
 
             <TouchableOpacity style={styles.addBtn} onPress={handleSubmit} activeOpacity={.7}>

@@ -9,10 +9,7 @@ export default function App() {
   const [todos, setTodos] = useState([]);
 
   const funcSetTodos = (val) => setTodos(val);
-
-  function changeState(val) {
-    setRemove(val);
-  }
+  const changeState = (val) => setRemove(val);
 
   return (
     <View style={styles.container}>
