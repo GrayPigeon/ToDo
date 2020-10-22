@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import Items from './components/Items';
 
-
 export default function App() {
   const [newItem, setNewItem] = useState('');
   const [todos, setTodos] = useState([]);
-  const [change, setChange] = useState(-1);
+  const [remove, setRemove] = useState(-1);
 
   function handleSubmit() {
     newItem !== '' && setTodos(todos.concat(newItem));
@@ -18,7 +17,7 @@ export default function App() {
   }
 
   function changeState(val) {
-    setChange(val);
+    setRemove(val);
   }
 
   return (
@@ -33,8 +32,8 @@ export default function App() {
 
         <View style={styles.searchAndBtnContainer}>
 
-          {/* <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput> */}
-          <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput>
+          <TextInput style={styles.searchBox} onChange={handleInputChange} placeholder='New Item'></TextInput>
+          {/* <TextInput style={styles.searchBox} onChange={text => setNewItem(text)} placeholder='New Item'></TextInput> */}
 
           <TouchableOpacity style={styles.addBtn} onPress={handleSubmit} activeOpacity={.7}>
 
@@ -44,9 +43,9 @@ export default function App() {
         </View>
 
         {todos.map((cur, i) => {
-          if (i == change) {
+          if (i == remove) {
             todos.splice(i, 1);
-            setChange(-1);
+            setRemove(-1);
           }
           return <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
         })}

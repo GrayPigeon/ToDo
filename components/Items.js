@@ -22,9 +22,7 @@ export default function Items({ itemName, stateChanger, currentIndex }) {
                         <Image style={styles.delImg} source={require('../assets/Trash.png')}></Image>
                     </TouchableOpacity>
                 </View>
-
             </View>
-
         </View>
     )
 }
