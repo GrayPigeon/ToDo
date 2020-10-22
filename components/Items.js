@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native';
+import DeleteBtn from '../components/DeleteBtn';
 
 export default function Items({ itemName, stateChanger, currentIndex }) {
-
-    function handleDelete() {
-        console.log('DELETED');
-        stateChanger(currentIndex);
-    }
-
     return (
         <View style={styles.container} >
 
             <View style={styles.itemAndBtnContainer}>
                 <View style={styles.itemTextContainer}>
                     <Text style={styles.itemText}>{itemName}</Text>
-
                 </View>
 
-                <View style={styles.deleteContainer}>
-                    <TouchableOpacity style={styles.deleteBtn} onPress={handleDelete} activeOpacity={.7}>
-                        <Image style={styles.delImg} source={require('../assets/Trash.png')}></Image>
-                    </TouchableOpacity>
-                </View>
+                <DeleteBtn stateChanger={stateChanger} currentIndex={currentIndex} />
+
             </View>
         </View>
     )
@@ -54,27 +45,7 @@ const styles = new StyleSheet.create({
 
     },
 
-    deleteContainer: {
-        flex: .5,
-    },
-
-    deleteBtn: {
-        height: '100%',
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
     itemText: {
         fontSize: 20,
     },
-
-    deleteText: {
-        fontSize: 20,
-    },
-
-    delImg: {
-        height: '100%',
-        width: '100%',
-    }
 })
