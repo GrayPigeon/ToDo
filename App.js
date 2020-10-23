@@ -3,6 +3,7 @@ import { StyleSheet, View, Dimensions } from 'react-native';
 import AddItems from './components/AddItem';
 import Items from './components/Items';
 import Title from './components/Title'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function App() {
@@ -12,7 +13,33 @@ export default function App() {
   const funcSetTodos = (val) => setTodos(val);
   const changeState = (val) => setRemove(val);
 
+
+  const store = async () => {
+    try {
+      await AsyncStorage.setItem('list', todos);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const get = async () => {
+    try {
+      let val = await AsyncStorage.getItem('list');
+      if (val !== null) {
+        console.log(val);
+      }
+    } catch (e) {
+
+    }
+  }
+
+
+  store();
+  get();
+
   return (
+
+
     <View style={styles.container}>
 
       <View style={styles.box}>
