@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Dimensions } from 'react-native';
 import AddItems from './components/AddItem';
 import Items from './components/Items';
 import Title from './components/Title'
+
 
 export default function App() {
   const [remove, setRemove] = useState(-1);
@@ -20,6 +21,7 @@ export default function App() {
         <AddItems todos={todos} funcSetTodos={funcSetTodos} />
 
 
+        {/* <View> */}
         {todos.map((cur, i) => {
           if (i == remove) {
             todos.splice(i, 1);
@@ -27,6 +29,7 @@ export default function App() {
           }
           return <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
         })}
+        {/* </View> */}
 
       </View>
     </View>
@@ -39,6 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    height: Dimensions.get('window').height,
   },
 
   box: {
