@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import DeleteBtn from '../components/DeleteBtn';
+import DeleteBtn from './DeleteBtn';
 
-export default function Items({ itemName, changeRemoveState, currentIndex }) {
+export default function EachItem({ itemName, changeRemoveState, currentIndex }) {
     return (
         <View style={styles.container} >
 
