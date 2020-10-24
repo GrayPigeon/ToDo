@@ -3,6 +3,7 @@ import { StyleSheet, View, TouchableOpacity, TextInput, Text, Platform } from 'r
 
 export default function AddItems({ todos, funcSetTodos }) {
     const [newItem, setNewItem] = useState('');
+
     let textInput = '';
 
     const handleSubmit = () => {

@@ -1,46 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
 import AddItems from './components/AddItem';
 import Items from './components/Items';
-import Title from './components/Title'
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import Title from './components/Title';
+import { configureStore } from '@reduxjs/toolkit';
 
 export default function App() {
   const [remove, setRemove] = useState(-1);
   const [todos, setTodos] = useState([]);
 
   const funcSetTodos = (val) => setTodos(val);
-  const changeState = (val) => setRemove(val);
+  const changeRemoveState = (val) => setRemove(val);
 
+  // const addTodo = payload => {
+  //   return {
+  //     type: 'todos/add',
+  //     payload: payload
+  //   }
+  // }
 
-  const store = async () => {
-    try {
-      await AsyncStorage.setItem('list', todos);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // let initial = [];
 
-  const get = async () => {
-    try {
-      let val = await AsyncStorage.getItem('list');
-      if (val !== null) {
-        console.log(val);
-      }
-    } catch (e) {
+  // const addTodoReducer = (state = initial, action) => {
+  //   let copy = [...initial]
+  //   return (
+  //     copy.push(action.payload)
+  //   )
+  // }
 
-    }
-  }
+  // const store = configureStore({ reducer: addTodoReducer })
+  // store.dispatch(addTodo);
+  // console.log(store.getState())
 
-
-  store();
-  get();
 
   return (
 
-
-    <View style={styles.container}>
+    < View style={styles.container} >
 
       <View style={styles.box}>
 
@@ -54,12 +49,12 @@ export default function App() {
             todos.splice(i, 1);
             setRemove(-1);
           }
-          return <Items stateChanger={changeState} itemName={cur} currentIndex={i} />;
+          return <Items changeRemoveState={changeRemoveState} itemName={cur} currentIndex={i} />;
         })}
         {/* </View> */}
 
       </View>
-    </View>
+    </View >
 
   );
 }

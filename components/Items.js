@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import DeleteBtn from '../components/DeleteBtn';
 
-export default function Items({ itemName, stateChanger, currentIndex }) {
+export default function Items({ itemName, changeRemoveState, currentIndex }) {
     return (
         <View style={styles.container} >
 
@@ -11,7 +11,7 @@ export default function Items({ itemName, stateChanger, currentIndex }) {
                     <Text style={styles.itemText}>{itemName}</Text>
                 </View>
 
-                <DeleteBtn stateChanger={stateChanger} currentIndex={currentIndex} />
+                <DeleteBtn changeRemoveState={changeRemoveState} currentIndex={currentIndex} />
 
             </View>
         </View>

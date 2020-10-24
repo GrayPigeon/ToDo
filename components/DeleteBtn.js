@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Image, useState } from 'react-native';
 
-export default function DeleteBtn({ stateChanger, currentIndex }) {
-    const handleDelete = () => stateChanger(currentIndex);
+export default function DeleteBtn({ changeRemoveState, currentIndex }) {
+    const handleDelete = () => changeRemoveState(currentIndex);
 
     return (
         <View style={styles.deleteContainer}>
