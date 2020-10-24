@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
   },
 
   box: {
-    backgroundColor: '#8ecae6',
-    height: '100%',
-    width: '100%',
+    backgroundColor: '#50514f',
+    height: '75%',
+    width: '40%',
   },
 });

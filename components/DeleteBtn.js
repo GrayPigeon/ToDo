@@ -1,32 +1,20 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image, useState } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 export default function DeleteBtn({ changeRemoveState, currentIndex }) {
     const handleDelete = () => changeRemoveState(currentIndex);
 
     return (
-        <View style={styles.deleteContainer}>
-            <TouchableOpacity style={styles.deleteBtn} onPress={handleDelete} activeOpacity={.7}>
-                <Image style={styles.delImg} source={require('../assets/Trash.png')}></Image>
+        <View>
+            <TouchableOpacity onPress={handleDelete} activeOpacity={.7}>
+                <Text style={styles.delTxt}>&times;</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
 const styles = new StyleSheet.create({
-    delImg: {
-        height: '100%',
-        width: '100%',
-    },
-
-    deleteContainer: {
-        flex: .5
-    },
-
-    deleteBtn: {
-        height: '100%',
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
+    delTxt: {
+        fontSize: 40,
     },
 })

@@ -64,16 +64,18 @@ const styles = StyleSheet.create({
     },
 
     searchBox: {
-        backgroundColor: 'white',
+        borderWidth: 0,
+
         padding: 10,
         flex: 3,
         height: '100%',
         marginRight: '10%',
-        borderRadius: 10,
+        borderBottomWidth: 4,
+        borderBottomColor: '#f25f5c',
     },
 
     addBtn: {
-        backgroundColor: '#fb8500',
+        backgroundColor: '#f25f5c',
         width: '20%',
         flex: 1,
         justifyContent: 'center',

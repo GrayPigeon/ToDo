@@ -19,7 +19,7 @@ const styles = new StyleSheet.create({
         margin: 15,
     },
     titleContainer: {
-        backgroundColor: '#619b8a',
+        // backgroundColor: '#0f4c75',
         padding: 8,
     },
 })

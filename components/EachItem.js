@@ -10,10 +10,12 @@ export default function EachItem({ itemName, changeRemoveState, currentIndex }) 
                 <View style={styles.itemTextContainer}>
                     <Text style={styles.itemText}>{itemName}</Text>
                 </View>
-
-                <DeleteBtn changeRemoveState={changeRemoveState} currentIndex={currentIndex} />
-
             </View>
+
+            <View style={styles.closeContainer}>
+                <DeleteBtn style={styles.x} changeRemoveState={changeRemoveState} currentIndex={currentIndex} />
+            </View>
+
         </View>
     )
 }
@@ -32,20 +34,26 @@ const styles = new StyleSheet.create({
         margin: '1%',
         justifyContent: 'center',
         alignItems: 'left',
+        paddingRight: 0,
+        marginRight: 0
     },
 
     itemTextContainer: {
         flex: 10,
         height: '100%',
-        backgroundColor: '#cad4d1',
+        backgroundColor: '#b8b8b8',
         justifyContent: 'center',
         alignItems: 'left',
-        marginRight: '5%',
+        marginRight: 0,
         paddingLeft: '2%',
-
     },
 
     itemText: {
         fontSize: 20,
+    },
+
+    closeContainer: {
+        height: '100%',
+        width: '100%',
     },
 })
