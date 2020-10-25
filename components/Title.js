@@ -11,13 +11,13 @@ export default function Title() {
 
 const styles = new StyleSheet.create({
     title: {
-        marginTop: '5%',
-        fontSize: 35,
+        // marginTop: '5%',
+        fontSize: '2.5em',
         fontWeight: 'bold',
         fontFamily: 'Arial, Helvetica, sans-serif',
         alignSelf: 'center',
     },
     titleContainer: {
-        padding: 0,
+        paddingTop: '4%',
     },
 })

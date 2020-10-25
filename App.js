@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, Dimensions, Platform } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Button, Platform } from 'react-native';
 import AddItems from './components/AddItem';
 import Title from './components/Title';
 
@@ -8,10 +8,13 @@ export default function App() {
     <View style={styles.container}>
 
       <View
-        style={Platform.OS == 'ios' || Platform.OS == 'android' ? styles.mobileBox : styles.webBox}
+        style={Platform.OS == 'ios' || Platform.OS == 'android'
+          ? styles.mobileBox
+          : styles.webBox}
       >
         <Title />
         <AddItems />
+
       </View>
     </View >
   );
@@ -19,15 +22,16 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: '100%',
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    height: Dimensions.get('window').height,
+    // height: Dimensions.get('window').height,
   },
 
   webBox: {
     backgroundColor: '#50514f',
-    height: '75%',
+    height: '80%',
     width: '40%',
   },
 

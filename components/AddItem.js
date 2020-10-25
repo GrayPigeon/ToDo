@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, TextInput, Text, Platform } from 'react-native';
 import EachItem from './EachItem';
+import Clear from './Clear';
 
 export default function AddItems() {
     const [newItem, setNewItem] = useState('');
@@ -8,7 +9,7 @@ export default function AddItems() {
     const [remove, setRemove] = useState(-1);
 
     const funcSetRemove = val => setRemove(val)
-
+    const funcEmptyTodos = () => setTodos([])
 
     let textInput = '';
 
@@ -20,7 +21,11 @@ export default function AddItems() {
     const handleInputChange = (e) => setNewItem(e.target.value);
 
     return (
-        <View style={styles.container}>
+        <View
+            style={Platform.OS == 'ios' || Platform.OS == 'android'
+                ? styles.mobileContainer
+                : styles.webContainer}
+        >
             <View style={styles.addTodoContainer}>
 
                 {Platform.OS == 'ios' || Platform.OS == 'android'
@@ -42,16 +47,21 @@ export default function AddItems() {
                     return <EachItem changeRemoveState={funcSetRemove} itemName={cur} currentIndex={i} />
                 })}
             </View>
+
+            <Clear style={styles.clearText} funcEmptyTodos={funcEmptyTodos} />
         </View>
-
-
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
+    mobileContainer: {
         width: '100%',
         height: '100%',
+    },
+
+    webContainer: {
+        height: '100%',
+        width: '100%',
     },
 
     addTodoContainer: {
