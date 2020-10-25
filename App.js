@@ -1,12 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, Platform } from 'react-native';
 import AddItems from './components/AddItem';
 import Title from './components/Title';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
+
+      <View
+        style={Platform.OS == 'ios' || Platform.OS == 'android' ? styles.mobileBox : styles.webBox}
+      >
         <Title />
         <AddItems />
       </View>
@@ -22,9 +25,15 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height,
   },
 
-  box: {
+  webBox: {
     backgroundColor: '#50514f',
     height: '75%',
     width: '40%',
   },
+
+  mobileBox: {
+    backgroundColor: '#50514f',
+    height: '100%',
+    width: '100%',
+  }
 });

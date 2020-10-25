@@ -54,6 +54,6 @@ const styles = new StyleSheet.create({
 
     closeContainer: {
         height: '100%',
-        width: '100%',
+        width: '7.5%',
     },
 })

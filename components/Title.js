@@ -7,19 +7,17 @@ export default function Title() {
             <Text style={styles.title}>ToDo</Text>
         </View>
     )
-
 }
 
 const styles = new StyleSheet.create({
     title: {
+        marginTop: '5%',
         fontSize: 35,
         fontWeight: 'bold',
         fontFamily: 'Arial, Helvetica, sans-serif',
         alignSelf: 'center',
-        margin: 15,
     },
     titleContainer: {
-        // backgroundColor: '#0f4c75',
-        padding: 8,
+        padding: 0,
     },
 })

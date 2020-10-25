@@ -65,13 +65,14 @@ const styles = StyleSheet.create({
 
     searchBox: {
         borderWidth: 0,
-
+        outline: 0,
         padding: 10,
         flex: 3,
         height: '100%',
         marginRight: '10%',
         borderBottomWidth: 4,
         borderBottomColor: '#f25f5c',
+        outline: 0,
     },
 
     addBtn: {
@@ -85,5 +86,5 @@ const styles = StyleSheet.create({
 
     itemsContainer: {
         flexDirection: 'column',
-    }
+    },
 })
