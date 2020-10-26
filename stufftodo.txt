@@ -1,0 +1,4 @@
+- Bug: Cannot delete the last todo, localstorage problem
+- Add localstorage stuff to Clear.js
+- Switch out all localstorage stuff to asyncstorage (so it works on mobile)
+- Separate AddItems.js into more components 
